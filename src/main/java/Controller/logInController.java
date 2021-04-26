@@ -95,7 +95,8 @@ public class logInController implements Initializable {
 
     void viewWindow(Event event) {
         try {
-            Parent parent1 = FXMLLoader.load(getClass().getResource("/View/logInUI.fxml"));
+            Parent parent1 = FXMLLoader.load(getClass().getResource("/View/Main.fxml"));
+
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(new Scene(parent1));
             window.show();

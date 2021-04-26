@@ -9,23 +9,24 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane alignment="center" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Main">
+<GridPane alignment="center" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AccountController">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
    <rowConstraints>
       <RowConstraints />
+      <RowConstraints />
    </rowConstraints>
    <children>
-      <AnchorPane prefHeight="314.0" prefWidth="495.0">
+      <AnchorPane prefHeight="361.0" prefWidth="432.0" GridPane.rowIndex="1">
          <children>
-            <Button fx:id="depositButton" layoutX="129.0" layoutY="243.0" mnemonicParsing="false" onAction="#depositButton" prefHeight="33.0" prefWidth="111.0" text="Deposit 50kr" />
-            <Button fx:id="withdrawButton" layoutX="275.0" layoutY="243.0" mnemonicParsing="false" onAction="#withdrawButton" prefHeight="33.0" prefWidth="111.0" text="Withdraw 50kr" />
-            <Text layoutX="110.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Number" wrappingWidth="111.33333333333337" />
-            <Text layoutX="110.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance" wrappingWidth="99.47008895874023" />
-            <TextField fx:id="accountBalanceTextField" editable="false" layoutX="229.0" layoutY="174.0" promptText="Balance" />
-            <TextField fx:id="accountNumberTextField" editable="false" layoutX="229.0" layoutY="123.0" promptText="Account  number" />
-            <Text layoutX="182.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account" underline="true">
+            <Button id="depositButton" fx:id="depositButton" layoutX="97.0" layoutY="258.0" mnemonicParsing="false" onAction="#depositButton" prefHeight="33.0" prefWidth="111.0" text="Deposit 50 kr" />
+            <Button id="withdrawButton" fx:id="withdrawButton" layoutX="243.0" layoutY="258.0" mnemonicParsing="false" onAction="#withdrawButton" prefHeight="33.0" prefWidth="111.0" text="Withdraw 50 kr" />
+            <Text layoutX="78.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Number" wrappingWidth="111.33333333333337" />
+            <Text layoutX="78.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance" wrappingWidth="99.47008895874023" />
+            <TextField fx:id="accountBalanceTextField" editable="false" layoutX="197.0" layoutY="189.0" promptText="Balance" />
+            <TextField fx:id="accountNumberTextField" editable="false" layoutX="197.0" layoutY="138.0" promptText="Account  number" />
+            <Text layoutX="32.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Management" textAlignment="JUSTIFY">
                <font>
                   <Font size="36.0" />
                </font>
