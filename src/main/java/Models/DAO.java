@@ -43,7 +43,7 @@ public class DAO {
     }
     public User getUser(String person_number, String password) {
         User temp = null;
-        String query = "SELECT * FROM User where person_number = ? and password = ?;";
+        String query = "SELECT * FROM User where SSN = ? and password = ?;";
         try {
             temp = retrieveUser(query, person_number, password);
         } catch (Exception ex) {
@@ -53,9 +53,9 @@ public class DAO {
     }
 
     private User createUserObject(ResultSet resultSet) throws Exception {
-        String sSN = resultSet.getString("person_number");
+        String sSN = resultSet.getString("SSN");
         String name = resultSet.getString("name");
-        int account_number = resultSet.getInt("account_number");
+        int account_number = resultSet.getInt("accountNumber");
         String password = resultSet.getString("password");
         user = new User(sSN, name, account_number);
         user.setPassword(password);
@@ -131,7 +131,7 @@ public class DAO {
             if (!Database.dbConnection.isClosed()) {
                 if (account != null) {
                     accountBalance = account.getAccountBalance();
-                    String query = "UPDATE `Account` SET `account_balance` = ? WHERE (`id` = ?);";
+                    String query = "UPDATE `Account` SET `accountBalance` = ? WHERE (`id` = ?);";
                     PreparedStatement prepStmt = Database.getConnection().prepareStatement(query);
                     prepStmt.setDouble(1, accountBalance);
                     prepStmt.setInt(2, account.getAccountNumber());
@@ -154,7 +154,7 @@ public class DAO {
         try {
             if (!Database.dbConnection.isClosed()) {
                 if (transaction.getAmount() != 0) {
-                    String queryString = "INSERT INTO `Transaction` (`amount`, `account_number`) VALUES (?, ?);";
+                    String queryString = "INSERT INTO `Transaction` (`amount`, `accountNumber`) VALUES (?, ?);";
                     PreparedStatement prepStmt = Database.getConnection().prepareStatement(queryString);
                     prepStmt.setDouble(1, transaction.getAmount());
                     prepStmt.setInt(2, transaction.getAccount().getAccountNumber());

@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Main implements Initializable {
+public class AccountController implements Initializable {
     private final DBMethods dbMethods = new DBMethods();
     private final User currentUser = UserSingleton.getInstance().getUser();
     private final Account account = dbMethods.getAccount(currentUser.getAccountNumber());

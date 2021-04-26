@@ -26,7 +26,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
-public class logIn implements Initializable {
+public class logInController implements Initializable {
     private PreparedStatement preparedStatement = null;
     private Connection connection = null;
     private ResultSet resultSet = null;
@@ -56,7 +56,7 @@ public class logIn implements Initializable {
 
     public void loginMethod(ActionEvent event) {
 
-        String person_number = userIdTextField.getText();
+        String SSN = userIdTextField.getText();
         String password = passwordTextField.getText();
 
         try {
@@ -64,7 +64,7 @@ public class logIn implements Initializable {
                 Database database = Database.getInstance();
                 if (database.isConnected()) {
                     DBMethods dbMethods = new DBMethods();
-                    currentUser = dbMethods.getUser(person_number, password);
+                    currentUser = dbMethods.getUser(SSN, password);
 
                     if (currentUser == null) {
                         lbError.setText("Please Enter a valid User name and Password");
@@ -95,7 +95,7 @@ public class logIn implements Initializable {
 
     void viewWindow(Event event) {
         try {
-            Parent parent1 = FXMLLoader.load(getClass().getResource("/View/Main.fxml"));
+            Parent parent1 = FXMLLoader.load(getClass().getResource("/View/logInUI.fxml"));
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(new Scene(parent1));
             window.show();
