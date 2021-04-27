@@ -91,11 +91,11 @@ public class DAO {
         return temp;
     }
 
-    private Account retrieveAccount(String query, int account_number) {
+    private Account retrieveAccount(String query, int accountNumber) {
         account = null;
         try {
             if (!Database.dbConnection.isClosed()) {
-                resultSet = retrieveSet(query, String.valueOf(account_number));
+                resultSet = retrieveSet(query, String.valueOf(accountNumber));
                 if (resultSet != null) {
                     if (resultSet.next()) {
                         return account = createAccountObject(resultSet);

@@ -72,7 +72,7 @@ public class logInController implements Initializable {
                     } else {
                         //    alert(AlertType.CONFIRMATION, "Login Successful", null, "Successful"); not needed here
                         UserSingleton.getInstance().setUser(currentUser);
-                        viewWindow(event);
+                        windowView(event);
                     }
                 }
 
@@ -93,7 +93,7 @@ public class logInController implements Initializable {
         alert.showAndWait();
     }
 
-    void viewWindow(Event event) {
+    void windowView(Event event) {
         try {
             Parent parent1 = FXMLLoader.load(getClass().getResource("/View/Main.fxml"));
 
